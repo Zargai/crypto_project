@@ -5,11 +5,11 @@ const User = new mongoose.Schema(
     {
         username:{
             type: String,
-            required: [true, 'Please provide full name'],
+            required: false
         },
         password:{
             type: String,
-            required: [true, 'Please provide password'],
+            required: false
         },
         like:{
             type: Array,

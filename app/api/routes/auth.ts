@@ -76,7 +76,7 @@ export default (app: Router) => {
             return next(e)
         }
     })
-    route.post('/updatefav', async (req: Request, res: Response, next: NextFunction) => {
+    route.post('/updatefav' ,async (req: Request, res: Response, next: NextFunction) => {
         console.log(req.body);
         try {
             const { username } = req.body;

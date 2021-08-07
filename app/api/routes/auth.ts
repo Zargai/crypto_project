@@ -39,7 +39,7 @@ export default (app: Router) => {
         }
     })
     //for getting likes of user
-    route.post('/getlikes', async (req: Request, res: Response, next: NextFunction) => {
+    route.post('/getlikes',Auth, async (req: Request, res: Response, next: NextFunction) => {
         try {
             console.log('body', req.body)
             const { username, password } = req.body;
@@ -53,7 +53,7 @@ export default (app: Router) => {
     })
 
     //for deleting user
-    route.delete('/delete/:username', async (req: Request, res: Response, next: NextFunction) => {
+    route.delete('/delete/:username',Auth, async (req: Request, res: Response, next: NextFunction) => {
         try {
 
             const { success, message } = await authServiceInstance.deleteuser(req.params.username as string);
@@ -65,7 +65,7 @@ export default (app: Router) => {
     })
 
     //update user
-    route.post('/updateuser', async (req: Request, res: Response, next: NextFunction) => {
+    route.post('/updateuser',Auth, async (req: Request, res: Response, next: NextFunction) => {
         console.log(req.body);
         try {
             const { username, like } = req.body;
@@ -76,7 +76,7 @@ export default (app: Router) => {
             return next(e)
         }
     })
-    route.post('/updatefav' ,async (req: Request, res: Response, next: NextFunction) => {
+    route.post('/updatefav',Auth,async (req: Request, res: Response, next: NextFunction) => {
         console.log(req.body);
         try {
             const { username } = req.body;
@@ -87,7 +87,7 @@ export default (app: Router) => {
             return next(e)
         }
     })
-    route.post('/deletefav', async (req: Request, res: Response, next: NextFunction) => {
+    route.post('/deletefav',Auth, async (req: Request, res: Response, next: NextFunction) => {
         console.log(req.body);
         try {
             const { username } = req.body;

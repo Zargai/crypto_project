@@ -47,6 +47,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.4",
     "@types/node": "^12.7.11",
     "@types/redis": "^2.8.28"
   }
